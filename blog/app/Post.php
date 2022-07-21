@@ -11,10 +11,10 @@ class Post extends Model
 {
     use SoftDeletes;
     
-    protected $fillable = [
-     'title',
-     'body',
-     ];
+   protected $fillable = [
+    'title',
+    'body',
+];
      
     public function getPaginateByLimit(int $limit_count=10)
     {

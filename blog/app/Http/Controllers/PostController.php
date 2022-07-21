@@ -18,16 +18,14 @@ class PostController extends Controller
     }
 
     public function create()
-    {
-        return view('posts/create');
-    }
+{
+    return view('posts/create');
+}
 
-    public function store(Post $post, PostRequest $request) // 引数をRequest->PostRequestにする
-    {
-        $input = $request['post'];
-        $post->fill($input)->save();
-        return redirect('/posts/' . $post->id);
-    }
+    public function store(Post $post,Request $request)
+{
+   dd($request->all());
+}
     
     public function edit(Post $post)
     {
