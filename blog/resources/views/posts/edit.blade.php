@@ -15,11 +15,12 @@
                 <h2>タイトル</h2>
                 <input type='text' name='post[title]' value="{{ $post->title }}">
             </div>
-            <div class='content__body'>
+            <div class='content__contents'>
                 <h2>本文</h2>
-                <input type='text' name='post[body]' value="{{ $post->body }}">
+                <input type='text' name='post[contents]' value="{{ $post->contents }}">
             </div>
             <input type="submit" value="保存">
+            <div class="back">[<a href="/">back</a>]</div>
         </form>
     </div>
 </body>
