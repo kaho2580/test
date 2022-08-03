@@ -4,19 +4,21 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImageColumnToPostsTable extends Migration
+class CreateCategory2sTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-  public function up()
-{
-    Schema::table('posts', function (Blueprint $table) {
-        $table->string('image', 100)->nullable();
-    });
-}
+    public function up()
+    {
+    Schema::create('categories', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('name', 50);
+        $table->timestamps();
+        });
+    }   
 
     /**
      * Reverse the migrations.
@@ -25,8 +27,6 @@ class AddImageColumnToPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('category2s');
     }
 }

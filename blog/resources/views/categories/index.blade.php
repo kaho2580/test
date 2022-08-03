@@ -14,30 +14,12 @@
                 <div class='post'>
                 <h2 class='title'>
                 <a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
-                <p class='body'>{{$post->body}}</p>
+               <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $posts->links() }}    
         </div>
-    
-    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-    @csrf
-    @method('DELETE')
-    <button type="submit"><span onclick ="return deletePost(this);">delete</sapn></button>
-    
-    <a href="">{{ $post->category->name }}</a>
-        
-        <script>
-            function deletePost(e){
-                "use strict";
-                if(confirm("削除すると復元できません。\n本当に削除しますか？")){
-                    document. getElementById("form_delete").submit();
-                }
-            }
-        </script>
-</form>
-    
     </body>
 </html>

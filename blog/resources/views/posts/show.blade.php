@@ -14,20 +14,14 @@
             </h2>
                 <div class='content'>
                     <div class="content__post">
-                        <p>{{$post->body}}</p>
+                        <p>{{$post->contents}}</p>
                         <p class='updated_at'>{{$post->updated_at}}</p>
                     </div>
                 </div>
-                
-                <a href='/posts/{{$post->id}}'></a>
-                <h2 class='title'>{{$post->title}}</h2>
-                <p class='body'>{{$post->body}}</p>
-                <p class='updated_at'>{{$post->updated_at}}</p>
-                
                             <div class="back">[<a href="/">back</a>]</div>
                             <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-                            <a href="">{{ $post->category->name }}</a>
-                            <a herf="/categories/{{$post->category->id}}">{{$post->category->name}}</a>
+                            <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+                            
         <script>
             function submit_02() {
                 "use strict";

@@ -14,8 +14,8 @@
                 <div class='post'>
                 <h2 class='title'>
                 <a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
-                <p class='body'>{{$post->body}}</p>
-                <a herf='/categories/{{$post->category->id}}'>{{$post->category->name}}</a>
+                <p class='contents'>{{$post->contents}}</p>
+                <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                 </div>
             @endforeach
         </div>
